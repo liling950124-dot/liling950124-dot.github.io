@@ -330,7 +330,25 @@
             z-index: -1;
             animation: imageBorder 4s ease-in-out infinite alternate;
         }
+        /* 专门控制个人照片的样式 */
+.profile-photo {
+    width: 100%;        /* 宽度撑满父容器（即 about-image 的宽度） */
+    max-width: 350px;   /* 设置最大宽度限制，防止在宽屏上显得太大 */
+    height: 400px;      /* 设置一个固定高度 */
+    object-fit: cover;  /* 核心属性：确保图片在裁剪填充时不被拉伸变形 */
+    border-radius: 15px; /* 圆角，与你的整体设计保持一致 */
+    display: block;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* 增加一点阴影感 */
+    position: relative;
+    z-index: 2;
+}
 
+/* 调整照片容器，确保它和你的 3D 边框动画对齐 */
+.about-image {
+    display: flex;
+    justify-content: center; /* 居中显示照片 */
+    position: relative;
+}
         @keyframes imageBorder {
             0% { transform: rotate(0deg) scale(1); }
             100% { transform: rotate(2deg) scale(1.02); }
